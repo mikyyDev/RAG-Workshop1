@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+rag-env/
+env/
+.venv/
+
+# IDE
+.idea/
+
+# Chroma / vector DB (gets very big)
+chroma_db/
