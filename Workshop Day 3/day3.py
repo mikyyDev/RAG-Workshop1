@@ -37,8 +37,8 @@ print(f"Loaded {len(documents)} pages")
 print("\nSplitting document...\n")
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,   # slightly smaller chunks for better granularity
-    chunk_overlap=50
+    chunk_size=600,   # slightly smaller chunks for better granularity
+    chunk_overlap=100
 )
 
 chunks = text_splitter.split_documents(documents)
@@ -70,7 +70,7 @@ vector_db = Chroma.from_documents(
 )
 
 # Use hybrid retriever (MMR balances keyword + semantic similarity)
-retriever = vector_db.as_retriever(search_type="mmr", search_kwargs={"k":10})
+retriever = vector_db.as_retriever(search_type="mmr", search_kwargs={"k":3})
 print("Vector DB Ready")
 
 # ================================
